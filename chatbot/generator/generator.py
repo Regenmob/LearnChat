@@ -11,8 +11,8 @@ class Generator:
 
     def generate(self, prompt: str) -> Iterator[str]:
         # 프롬프트를 기반으로 텍스트를 생성합니다.
-        stream = self.llm(prompt, max_tokens=80, stream=True)
-
+        stream = self.llm(prompt, max_tokens=None, stream=True)
+        #max_tokens : 출력할 토큰의 제한을 해제함
         # 생성된 텍스트를 하나씩 반환합니다.
         for chunk in stream:
             yield chunk['choices'][0]['text']

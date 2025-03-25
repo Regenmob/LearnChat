@@ -7,8 +7,8 @@ class ChatBot:
         self.retrieval = Retrieval()
         self.generator = Generator()
 
-    def respond(self, query: str, debug: bool = False) -> str:
-
+    def respond(self, query: str, debug: bool = True) -> str:
+                                        #prompt 출력 함
         retrieved = self.retrieval.retrieve(query)
 
         prompt: str = (
